@@ -1,0 +1,73 @@
+$purple:  ("1": #2d2834,"2": #4d435d, "3": #7d6b9b, "4": #c8bbda, "5": #eae2f3, "6": #f9f5fe, "7": #fcf9ff);
+$pink: ("1": #aa0a52, "2": #ff0073);
+
+.form-group{
+	width: 400px;
+	margin-bottom: 15px;
+	
+	input:last-child{
+		margin-bottom: 0px;
+	}
+
+	.error-elem{
+		height: 2em;
+		transition: height .3s;
+
+		&.hidden{
+			height: 0px;
+		}
+	}
+}
+
+.input{
+	background-color: #f9f5fe;
+	width: 100%;
+	height: 35px;
+    box-sizing: border-box;
+	background-color: map-get($purple, "6");
+	border: 1px solid transparent;
+	color: map-get($purple, "4");
+	padding: 0px 10px;
+    border-radius: 5px;
+   	font-size: 1em;
+	border: 1px solid transparent;
+	
+	&:hover:not(:disabled){
+		border: 1px solid map-get($purple, "4");
+		background-color: white;
+	}
+
+	&:focus,
+	&.not-empty{
+		border: 1px solid map-get($purple, "4");
+		outline: none;
+		background-color: white;
+		border-color: map-get($purple, "4");
+		color: map-get($purple, "3");
+		
+		&::placeholder{
+			opacity: 0;
+		}
+	}
+
+	&::placeholder{
+		color: map-get($purple, "4");
+		opacity: 1;
+	}
+
+	&[type="button"]{
+		cursor: pointer;
+		border: 1px solid map-get($purple, "4");
+		&:hover{
+			color: map-get($purple, "3");
+		}
+	}
+	
+}
+
+textarea.input{
+	height: auto;
+	padding: 10px;
+	resize: vertical;
+	display: block;
+}

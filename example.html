@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="resource/front-end-validator.js"></script>
+	<link href="build/front-end-validator.min.css" rel="stylesheet">
+
+</head>
+<body>
+
+	<div id="form">
+		<div class="form-group">
+			<input class="input" type="text" name="name">
+		</div>
+		<div class="form-group">
+			<input class="input" type="text" name="email">
+		</div>
+		<div class="form-group">
+			<input class="input" type="text" name="password">
+		</div>
+	</div>
+
+	<script>
+		frontEndValidator = new FrontEndValidator({
+			'data': [
+				{
+					'name': 'name',
+					'message': "Name error"
+				} , {
+					'name': 'email2',
+					'message': "email error"
+				} , {
+					'name': 'password',
+					'pattern': '[^\s]{1,}',
+					'message': "password error"
+				}
+			],
+			'selfElemSelector': '#form',
+			'parentElemSelector': '.form-group',
+			'debug': false
+		});
+	</script>
+</body>
+</html>
